@@ -9,3 +9,13 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
+
+const body = document.querySelector('body');
+const result = document.getElementById('result');
+
+function clickEvent() {
+    result.innerText = "You Did It!";
+    body.removeEventListener('click', clickEvent);
+}
+
+body.addEventListener('click', clickEvent);

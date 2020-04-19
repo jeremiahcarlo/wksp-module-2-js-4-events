@@ -38,7 +38,7 @@ Open the door, when someone is there.
 
 These events fire when the HTML elements you can interact with gain/ lose focus.
 
-- `focus`
+- `focus` - only happens when you click
 - `blur`
 - `focusin` (_new; not supported by Firefox_)
 - `focusout` (_new; same as blur; not supported by Firefox_)
@@ -49,42 +49,42 @@ These events fire when the HTML elements you can interact with gain/ lose focus.
 
 - `click`
 - `dblclick`
-- `mousedown`
-- `mouseup`
-- `mouseover`
-- `mouseout`
-- `mousemove`
+- `mousedown`  
+- `mouseup`  
+- `mouseover` - hover
+- `mouseout` - hover away
+- `mousemove` - anytime the mouse moves
 
 ---
 
 ##### Keyboard Events
 
 - `input`
-- `keydown`
-- `keypress`
-- `keyup`
+- `keydown` - key held down
+- `keypress` -  key pressed (single)
+- `keyup` - key press released 
 
 ---
 
 ### Form Events
 
-- `submit`
-- `change`
-- `input`
+- `submit` -  
+- `change` - 
+- `input` -
 
 ---
 
 ### HTML5 Events
 
 - `DOMContentLoaded`
-- `hashchange`
-- `beforeunload`
+- `hashchange` 
+- `beforeunload` - puts up an alert when the user tries to leave the page
 
 ---
 
 ### CSS Events
 
-- `transitionend`
+- `transitionend` - 
 - `animationstart`
 - `animationend`
 
@@ -94,11 +94,20 @@ These events fire when the HTML elements you can interact with gain/ lose focus.
 
 All DOM nodes have methods we can use to _notify_ us of an event.
 
-- [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+- [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) [require 2 arguments]
 - [`removeEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
 
 ```js
 // Example
+cont button = document.getElementById('btn');
+function handleOuch = function() {
+    console.log('ouch!');
+}
+// add it
+button.addEventListener('click', handleOuch);
+
+// remove it 
+button.removeEventListener('click', handleOuch);
 
 ```
 
@@ -156,7 +165,7 @@ Handlers registered on nodes with children will also receive events that happen 
 
 - The Event Capture Phase
 - The Event Target Phase
-- The Event Bubbling Phase
+- The Event Bubbling Phase - 
 
 **most** events bubble
 

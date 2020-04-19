@@ -1,0 +1,14 @@
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 70px;
+  margin-top: 20%;
+}
+
+.time-text {
+  text-align: center;
+}
+
+.result {
+  text-align: center;
+}
